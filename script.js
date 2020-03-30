@@ -1,20 +1,41 @@
-let num = 266219;
+let lang;
+lang = prompt('Write a lang:');
+let daysOfWeekRu = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
+let daysOfWeekEn = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
-let multiplicationOfNum = 1;
+// 1 ----->
 
-// 1-ый способ ---
-// num = String(num).split('');
-// for (const numeral of num) {
-// 	multiplicationOfNum *= Number(numeral);
-// }
-
-// 2-ой способ ---
-num = String(num);
-for (let i = 0; i < num.length; i += 1) {
-	multiplicationOfNum *= num[i];
+// a
+if (lang === 'ru') {
+	console.log(daysOfWeekRu);
+} else {
+	console.log(daysOfWeekEn);
 }
+// b
+switch (lang) {
+	case 'en':
+		console.log(daysOfWeekEn);
+		break;
+	default:
+		console.log(daysOfWeekRu);
+}
+// c
+lang === 'ru' ? console.log(daysOfWeekRu):console.log(daysOfWeekEn);
+// d (то, о чем я писал в дискорде)
+daysOfWeek = {
+	ru: daysOfWeekRu,
+	en: daysOfWeekEn,
+}
+console.log(daysOfWeek[lang]);
 
-console.log(multiplicationOfNum); // Произведение всех цифр числа
+// 2 ----->
 
-console.log(String(multiplicationOfNum**3).slice(0,2)); // Первые 2 цифры числа в 3-ей степени
+let namePerson = prompt('Put a name: ');
+
+namePerson === 'Артем' ? console.log('директор'):namePerson === 'Максим' ? console.log('преподаватель'):console.log('студент');
+
+
+
+
+
 
