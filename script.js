@@ -1,38 +1,8 @@
-// 1 -------------------------------
+const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sunday', 'Saturday'];
 
-let arr = ['23803842', '49248973'];
+let today = new Date();
 
-for (let i = 0; i < 5; i += 1) {
-	const randomNumber = Math.random() * 1000000;
-	arr.push(String(Math.round(randomNumber)));
+for (let i = 0; i < week.length; i++) {
+	i === today.getDate() + 1 || (i === 6 && today.getDate() === 0) ? console.log(week[i].bold()) : i === 5 || i === 6 ? console.log(week[i].italics()) : console.log(week[i])
 }
-
-const checkArray = (massive) => {
-	for (const item of massive) {
-		switch (item[0]) {
-			case '2':
-			case '4':
-				console.log(item);
-				break;
-		}
-	}
-};
-
-checkArray(arr);
-
-// 2 -------------------------------
-
-const simpleNumbers = (start, end) => {
-	for (let i = start; i < end + 1; i += 1) {
-		let dividers = 0
-		for (let j = start; j**2 <= i; j += 1) {
-			if (i % j === 0) {
-				dividers += 1;
-			}
-		}
-		if (dividers < 2) {console.log(`${i} -- Делители этого числа: 1 и ${i}`)}
-	}
-};
-
-simpleNumbers(1, 100);
 
