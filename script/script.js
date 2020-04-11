@@ -214,16 +214,11 @@ let allDataInputs = document.querySelectorAll('.data input');
 allDataInputs.forEach((elem) => {
     if (elem.getAttribute('placeholder') === 'Наименование') {
         elem.addEventListener('input', function() {
-            // здесь наверно регулярное выражение нужно
-            if (!elem.value.match(/[А-Я]/i)) {
-                elem.value = '';
-            }
+            elem.value = elem.value.replace(/[^А-Я,.; ]/i, '');
         });
     } else if (elem.getAttribute('placeholder') === 'Сумма') {
         elem.addEventListener('input', function() {
-            if (!isNumber(elem.value)) {
-                elem.value = '';
-            }
+            elem.value = elem.value.replace(/[^0-9]/, '');
         });
     }
 });
